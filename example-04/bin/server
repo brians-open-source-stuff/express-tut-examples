@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+
+module.exports = async function(app) {
+  try {
+    const server = await app.listen(3000);
+    console.log("App is listening on port", server.address().port);
+  } catch (error) {
+    console.error(error.stack);
+    process.exit(1);
+  }
+};
